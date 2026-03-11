@@ -945,7 +945,7 @@ const CONFIRM_TRIGGERS = ['yes, confirm my booking!','yes please','yes','confirm
 const fallbacks = [
   "That's a great question! Would you like to book a free consultation so we can give you a personalised answer?",
   "Happy to help with that. Shall I book you in for a complimentary consultation with one of our practitioners?",
-  "I'd love to assist! Our team can answer that in detail during a free consultation — would you like me to book one?",
+  "I'd love to assist! Our team can answer that in detail during a free consultation. Would you like me to book one?",
 ];
 
 function addMsg(text, from) {
@@ -983,7 +983,7 @@ function addConfirmationCard(treatment) {
       <div style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
       </div>
-      <div style="font-size:15px;font-weight:600;color:#fff">Booking Confirmed! 🎉</div>
+      <div style="font-size:15px;font-weight:600;color:#fff">Booking Confirmed!</div>
     </div>
     <div style="background:rgba(255,255,255,.12);border-radius:10px;padding:14px 16px;margin-bottom:14px">
       <div style="font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">Appointment Details</div>
@@ -1040,7 +1040,7 @@ function sendDemo(text) {
 
   showTypingThenReply(() => {
     if (CONFIRM_TRIGGERS.includes(key)) {
-      addMsg("Wonderful! Let me lock that in for you right now ✨", 'bot');
+      addMsg("Wonderful! Let me lock that in for you right now", 'bot');
       setTimeout(() => {
         addConfirmationCard(lastTreatment || 'botox');
         setTimeout(() => {
